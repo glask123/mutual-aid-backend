@@ -93,4 +93,12 @@ router.post(
   })
 );
 
+router.post("/adminlogin", (req, res) => {
+  if (req.body.username == "brickadminlogin" && req.body.password == "hw123") {
+    res.status(200).send("Successfully logged in");
+  } else {
+    res.status(401).send("Unauthorized");
+  }
+});
+
 module.exports = router;
